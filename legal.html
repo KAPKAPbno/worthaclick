@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorthAClick?</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="grid-pattern">
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <i data-lucide="shield-check"></i>
+                </div>
+                <span class="nav-logo-text">WorthAClick<span>?</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="scan.html" class="nav-link">Сканер</a>
+                <a href="about.html" class="nav-link">Почему WAC?</a>
+                <a href="legal.html" class="nav-link active">Правовая информация</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-container">
+        <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 2rem;">Правовая информация</h1>
+
+        <section class="card legal-section" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+            <h2>
+                <i data-lucide="scroll-text"></i>
+                Пользовательское соглашение
+            </h2>
+            <div class="legal-content">
+                <p>Настоящее Пользовательское соглашение (далее — «Соглашение») регулирует использование веб-приложения WorthAClick? (далее — «Сервис»).</p>
+                
+                <p><strong>1. Описание Сервиса.</strong> WorthAClick? представляет собой клиентское веб-приложение для эвристического анализа URL-адресов и IP-адресов с целью оценки их потенциальной опасности. Сервис функционирует исключительно на стороне пользователя (client-side) и не осуществляет сбор, хранение или передачу персональных данных на собственные серверы.</p>
+                
+                <p><strong>2. Использование сторонних API.</strong> Для обеспечения функциональности Сервис обращается к следующим публичным интерфейсам:</p>
+                <ul>
+                    <li><strong>Google Public DNS</strong> (dns.google) — для получения DNS-записей доменов</li>
+                    <li><strong>Cloudflare DNS</strong> (cloudflare-dns.com) — резервный DNS-резолвер</li>
+                    <li><strong>IPinfo</strong> (ipinfo.io) — для получения геолокации и информации о провайдере</li>
+                    <li><strong>IPify</strong> (api.ipify.org) — для определения IP-адреса пользователя</li>
+                    <li><strong>AllOrigins</strong> (api.allorigins.win) — для обхода CORS-ограничений при анализе содержимого</li>
+                </ul>
+                
+                <p><strong>3. Отказ от ответственности.</strong> Сервис предоставляется «как есть» (as is) без каких-либо гарантий, явных или подразумеваемых. Разработчики не несут ответственности за:</p>
+                <ul>
+                    <li>Точность, полноту или актуальность предоставляемой информации</li>
+                    <li>Убытки, возникшие в результате использования или невозможности использования Сервиса</li>
+                    <li>Действия или бездействие пользователя на основании полученных данных</li>
+                    <li>Доступность и корректность работы сторонних API-сервисов</li>
+                </ul>
+                
+                <p><strong>4. Ограничения использования.</strong> Пользователь обязуется не использовать Сервис для:</p>
+                <ul>
+                    <li>Нарушения законодательства Российской Федерации и международного права</li>
+                    <li>Массового автоматизированного сканирования (rate limiting: 1 запрос в 60 секунд)</li>
+                    <li>Попыток обхода защитных механизмов Сервиса</li>
+                    <li>Реверс-инжиниринга с целью извлечения коммерческой выгоды</li>
+                </ul>
+                
+                <p><strong>5. Интеллектуальная собственность.</strong> Исходный код Сервиса распространяется под открытой лицензией MIT. Использование товарных знаков третьих лиц (Google, Cloudflare, IPinfo и др.) осуществляется исключительно в информационных целях.</p>
+                
+                <p><strong>6. Применимое право.</strong> Настоящее Соглашение регулируется и толкуется в соответствии с законодательством Российской Федерации. Все споры подлежат разрешению в соответствии с действующим законодательством РФ.</p>
+            </div>
+        </section>
+
+        <section class="card legal-section" style="padding: 1.5rem; margin-bottom: 1.5rem;">
+            <h2>
+                <i data-lucide="shield"></i>
+                Политика конфиденциальности
+            </h2>
+            <div class="legal-content">
+                <p>WorthAClick? не собирает, не хранит и не передаёт персональные данные пользователей на собственные серверы. Вся обработка информации происходит локально в браузере пользователя.</p>
+                
+                <p><strong>Данные, обрабатываемые локально:</strong></p>
+                <ul>
+                    <li>Введённые URL/IP-адреса (не сохраняются после закрытия страницы)</li>
+                    <li>Временная метка последнего сканирования (localStorage, для rate limiting)</li>
+                </ul>
+                
+                <p><strong>Данные, передаваемые третьим сторонам:</strong></p>
+                <ul>
+                    <li><strong>Доменное имя</strong> — Google DNS, Cloudflare DNS (для разрешения DNS)</li>
+                    <li><strong>IP-адрес сервера</strong> — IPinfo (для получения геолокации)</li>
+                    <li><strong>URL страницы</strong> — AllOrigins (для получения содержимого)</li>
+                    <li><strong>IP-адрес пользователя</strong> — IPify (для отображения)</li>
+                </ul>
+                
+                <p>Политики конфиденциальности указанных сервисов доступны на их официальных сайтах. Мы рекомендуем ознакомиться с ними перед использованием Сервиса.</p>
+            </div>
+        </section>
+
+        <section class="card legal-section legal-warning" style="padding: 1.5rem; border-color: rgba(234, 179, 8, 0.3);">
+            <h2 style="color: var(--accent-yellow);">
+                <i data-lucide="alert-triangle" style="color: var(--accent-yellow);"></i>
+                Важное предупреждение
+            </h2>
+            <div class="legal-content">
+                <p style="margin-bottom: 0;">
+                    Результаты анализа носят исключительно <strong>информационный характер</strong> и не являются гарантией безопасности или опасности проверяемого ресурса. Эвристические методы могут давать как ложноположительные, так и ложноотрицательные результаты. Окончательное решение о посещении ссылки принимает пользователь самостоятельно, осознавая все связанные с этим риски.
+                </p>
+            </div>
+        </section>
+
+        <section style="text-align: center; margin-top: 3rem; color: var(--text-dim); font-size: 0.875rem;">
+            <p>Дата последнего обновления: <span style="font-family: 'JetBrains Mono', monospace;">2025-01-14</span></p>
+            <p style="margin-top: 0.5rem;">Соответствует требованиям ГОСТ Р 59407-2021 «Информационные технологии. Методы и средства обеспечения безопасности»</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <i data-lucide="shield-check"></i>
+                <span>WorthAClick?</span>
+            </div>
+            <div class="footer-right">v1.2.0</div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

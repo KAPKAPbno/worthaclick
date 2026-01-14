@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorthAClick?</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="grid-pattern">
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <i data-lucide="shield-check"></i>
+                </div>
+                <span class="nav-logo-text">WorthAClick<span>?</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="scan.html" class="nav-link active">Сканер</a>
+                <a href="about.html" class="nav-link">Почему WAC?</a>
+                <a href="legal.html" class="nav-link">Правовая информация</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-container">
+        <section style="margin-bottom: 2rem;">
+            <div class="search-wrapper">
+                <i data-lucide="link" class="search-icon"></i>
+                <input 
+                    type="text" 
+                    id="url-input" 
+                    class="search-input"
+                    placeholder="Введите URL или IP-адрес..."
+                    autocomplete="off"
+                    spellcheck="false"
+                >
+                <button id="scan-btn" class="search-btn">
+                    <i data-lucide="scan" style="width: 1rem; height: 1rem;"></i>
+                    <span id="scan-btn-text">Проверить</span>
+                </button>
+            </div>
+            <div id="input-hint" class="input-hint"></div>
+        </section>
+
+        <section class="console-container" style="margin-bottom: 2rem;">
+            <div class="console-header">
+                <i data-lucide="terminal"></i>
+                <span>Консоль сканирования</span>
+                <span id="status-badge" class="status-badge status-badge-idle">Ожидание</span>
+            </div>
+            <div id="console-body" class="console-body">
+                <div class="status-muted">// Введите URL для начала анализа</div>
+            </div>
+        </section>
+
+        <section id="results-dashboard" class="hidden">
+            <div id="verdict-card" class="verdict-card">
+                <div id="verdict-icon" class="verdict-icon" style="background: rgba(148, 163, 184, 0.2);">
+                    <i data-lucide="shield-question" style="color: var(--text-muted);"></i>
+                </div>
+                <div class="verdict-content">
+                    <div id="verdict-title" class="verdict-title">Анализ завершён</div>
+                    <div id="verdict-subtitle" class="verdict-subtitle">Ожидание результатов проверки</div>
+                </div>
+                <div class="verdict-score">
+                    <div id="verdict-score-value" class="verdict-score-value">--</div>
+                    <div class="verdict-score-label">баллов риска</div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <i data-lucide="globe"></i>
+                        <span>DNS Записи</span>
+                    </div>
+                    <div id="dns-results" class="dashboard-card-body">
+                        <div class="status-muted">Ожидание данных...</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <i data-lucide="server"></i>
+                        <span>Инфраструктура</span>
+                    </div>
+                    <div id="infra-results" class="dashboard-card-body">
+                        <div class="status-muted">Ожидание данных...</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <i data-lucide="shield-alert"></i>
+                        <span>Безопасность</span>
+                    </div>
+                    <div id="security-results" class="dashboard-card-body">
+                        <div class="status-muted">Ожидание данных...</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="dashboard-card-header">
+                        <i data-lucide="code-2"></i>
+                        <span>Технологии</span>
+                    </div>
+                    <div id="tech-results" class="dashboard-card-body">
+                        <div class="status-muted">Ожидание данных...</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card dashboard-card-full">
+                    <div class="dashboard-card-header">
+                        <i data-lucide="bug"></i>
+                        <span>Уязвимости и Доступ</span>
+                    </div>
+                    <div id="vuln-results" class="dashboard-card-body">
+                        <div class="vuln-grid">
+                            <div class="vuln-item">
+                                <span class="vuln-label">Защита XSS (CSP)</span>
+                                <span id="vuln-csp" class="vuln-value status-muted">—</span>
+                            </div>
+                            <div class="vuln-item">
+                                <span class="vuln-label">Панель администратора</span>
+                                <span id="vuln-admin" class="vuln-value status-muted">—</span>
+                            </div>
+                            <div class="vuln-item">
+                                <span class="vuln-label">Публичный GIT</span>
+                                <span id="vuln-git" class="vuln-value status-muted">—</span>
+                            </div>
+                            <div class="vuln-item">
+                                <span class="vuln-label">Конфиденциальные файлы (.env)</span>
+                                <span id="vuln-env" class="vuln-value status-muted">—</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <i data-lucide="shield-check"></i>
+                <span>WorthAClick?</span>
+            </div>
+            <div class="footer-right">v1.2.0</div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

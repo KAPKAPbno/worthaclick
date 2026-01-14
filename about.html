@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorthAClick?</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="grid-pattern">
+    <!-- Навигация -->
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <i data-lucide="shield-check"></i>
+                </div>
+                <span class="nav-logo-text">WorthAClick<span>?</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Главная</a>
+                <a href="scan.html" class="nav-link">Сканер</a>
+                <a href="about.html" class="nav-link active">Почему WAC?</a>
+                <a href="legal.html" class="nav-link">Правовая информация</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-container">
+        <section style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Почему WorthAClick?</h1>
+            <p style="color: var(--text-muted); max-width: 32rem; margin: 0 auto;">
+                Девять принципов, которые делают наш инструмент надёжным выбором для анализа безопасности
+            </p>
+        </section>
+
+        <section class="cards-grid">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(34, 197, 94, 0.1);">
+                    <i data-lucide="database" style="color: var(--accent-green);"></i>
+                </div>
+                <h3 class="feature-title">Нулевой след данных</h3>
+                <p class="feature-description">Все вычисления происходят в вашем браузере. Мы не храним URL-адреса, IP или результаты проверок.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(56, 189, 248, 0.1);">
+                    <i data-lucide="user-x" style="color: var(--accent-blue);"></i>
+                </div>
+                <h3 class="feature-title">Без аккаунтов и трекинга</h3>
+                <p class="feature-description">Никакой регистрации, cookies отслеживания или аналитических скриптов. Полная анонимность.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(168, 85, 247, 0.1);">
+                    <i data-lucide="github" style="color: var(--accent-purple);"></i>
+                </div>
+                <h3 class="feature-title">Открытый код</h3>
+                <p class="feature-description">Весь исходный код доступен для аудита. Проверьте сами, что делает приложение.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(234, 179, 8, 0.1);">
+                    <i data-lucide="fingerprint" style="color: var(--accent-yellow);"></i>
+                </div>
+                <h3 class="feature-title">Эвристический щит</h3>
+                <p class="feature-description">Алгоритм Левенштейна выявляет фишинговые домены, имитирующие популярные бренды.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(239, 68, 68, 0.1);">
+                    <i data-lucide="languages" style="color: var(--accent-red);"></i>
+                </div>
+                <h3 class="feature-title">Защита от омографов</h3>
+                <p class="feature-description">Детекция смешанных алфавитов и Punycode-доменов для предотвращения IDN-атак.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(6, 182, 212, 0.1);">
+                    <i data-lucide="radar" style="color: #06b6d4;"></i>
+                </div>
+                <h3 class="feature-title">Аудит инфраструктуры</h3>
+                <p class="feature-description">Анализ DNS, геолокации сервера, провайдера и используемых технологий.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(16, 185, 129, 0.1);">
+                    <i data-lucide="ban" style="color: #10b981;"></i>
+                </div>
+                <h3 class="feature-title">Без рекламы</h3>
+                <p class="feature-description">Никаких баннеров, pop-up окон или платных функций. Инструмент полностью бесплатен.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(148, 163, 184, 0.1);">
+                    <i data-lucide="minimize-2" style="color: var(--text-muted);"></i>
+                </div>
+                <h3 class="feature-title">Функциональный минимализм</h3>
+                <p class="feature-description">Дизайн в традициях Дитера Рамса: меньше, но лучше. Только нужные функции.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(59, 130, 246, 0.1);">
+                    <i data-lucide="badge-check" style="color: #3b82f6;"></i>
+                </div>
+                <h3 class="feature-title">Верификация лидерами</h3>
+                <p class="feature-description">Использует API Google DNS и Cloudflare — ведущих мировых провайдеров безопасности.</p>
+            </div>
+        </section>
+
+        <section style="margin-top: 4rem; text-align: center;">
+            <blockquote style="font-size: 1.25rem; color: var(--text-muted); font-style: italic; max-width: 36rem; margin: 0 auto;">
+                «Хороший дизайн — это как можно меньше дизайна»
+            </blockquote>
+            <p style="margin-top: 1rem; color: var(--text-dim); font-size: 0.875rem;">— Дитер Рамс</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <i data-lucide="shield-check"></i>
+                <span>WorthAClick?</span>
+            </div>
+            <div class="footer-right">v1.2.0</div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

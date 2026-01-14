@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorthAClick?</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="grid-pattern">
+    <nav class="nav-container">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <i data-lucide="shield-check"></i>
+                </div>
+                <span class="nav-logo-text">WorthAClick<span>?</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Главная</a>
+                <a href="scan.html" class="nav-link">Сканер</a>
+                <a href="about.html" class="nav-link">Почему WAC?</a>
+                <a href="legal.html" class="nav-link">Правовая информация</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-container">
+        <section class="hero-section">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>Работает локально. Без серверов.</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Проверьте ссылку<br>
+                <span class="hero-title-accent">прежде чем кликнуть</span>
+            </h1>
+            
+            <p class="hero-description">
+                Эвристический анализ безопасности ссылок в реальном времени.
+                Защита от фишинга, омографических атак и вредоносных ресурсов.
+            </p>
+            
+            <a href="scan.html" class="btn-primary" style="font-size: 1.125rem; padding: 1rem 2rem;">
+                <i data-lucide="scan" style="width: 1.25rem; height: 1.25rem;"></i>
+                Начать сканирование
+            </a>
+            
+            <div class="hero-stats">
+                <div>
+                    <div class="hero-stat-value">0</div>
+                    <div class="hero-stat-label">Данных на сервере</div>
+                </div>
+                <div>
+                    <div class="hero-stat-value">9+</div>
+                    <div class="hero-stat-label">Проверок безопасности</div>
+                </div>
+                <div>
+                    <div class="hero-stat-value">100%</div>
+                    <div class="hero-stat-label">Открытый код</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cards-grid" style="margin-top: 2rem;">
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(56, 189, 248, 0.1);">
+                    <i data-lucide="fingerprint" style="color: var(--accent-blue);"></i>
+                </div>
+                <h3 class="feature-title">Левенштейн</h3>
+                <p class="feature-description">Детекция фишинговых доменов через анализ схожести написания</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(168, 85, 247, 0.1);">
+                    <i data-lucide="languages" style="color: var(--accent-purple);"></i>
+                </div>
+                <h3 class="feature-title">Омографы</h3>
+                <p class="feature-description">Выявление смешения кириллицы и латиницы в доменах</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon" style="background: rgba(34, 197, 94, 0.1);">
+                    <i data-lucide="server" style="color: var(--accent-green);"></i>
+                </div>
+                <h3 class="feature-title">DNS & IP</h3>
+                <p class="feature-description">Анализ инфраструктуры и геолокации сервера</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <i data-lucide="shield-check"></i>
+                <span>WorthAClick?</span>
+            </div>
+            <div class="footer-right">v1.2.0</div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
